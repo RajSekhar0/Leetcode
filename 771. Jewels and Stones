@@ -1,0 +1,18 @@
+class Solution {
+public:
+    int numJewelsInStones(string jewels, string stones) {
+        unordered_map<char,int>freq;
+        for(auto i:stones){
+            freq[i]++;
+        }
+        int ans=0;
+        for(auto i:jewels){
+            for(auto j:freq){
+                if(i==j.first){
+                    ans +=j.second;
+                }
+            }
+        }
+        return ans;
+    }
+};
